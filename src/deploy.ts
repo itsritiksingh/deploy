@@ -212,11 +212,11 @@ export const deployFromRepository = async (
 
 		const name = (await api.add(url, selectedBranch, [])).id;
 
-		const deploy = await api.deploy(name, [], plan, 'Repository');
+		// const deploy = await api.deploy(name, [], plan, 'Repository');
 
 		info('Deploying...');
 
-		await logs(runners, deploy.suffix, args['dev']);
+		await logs(runners, name, args['dev']);
 
 		info('Repository deployed');
 	} catch (e) {
